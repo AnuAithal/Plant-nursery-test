@@ -1,0 +1,272 @@
+
+.side-navbar {
+    background-color: #fff; 
+    width: 370px;
+    height: 100vh;
+    border-right: 1px solid  #bebcbc; /* Vertical border */
+    /* box-sizing: border-box; */
+  }
+  .side-navbar table {
+    width: 100%;
+  }
+  
+  .side-navbar td {
+    padding: 24px 20px;
+    border-bottom: 1px solid #bebcbc;
+    display: block;
+  }
+  
+  .side-navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    display: block;
+  }
+
+  .side-navbar tr{
+    cursor: pointer;
+  }
+    
+  .content {
+    flex: 1;
+    padding: 20px;
+    /* background-color: #EFF8F2; */
+  }
+  
+  .side-navbar td.selected {
+    border-right: 7px solid green;
+  }
+
+  .page-container{
+    display: flex;
+  }
+  
+
+
+  /* ---------Profile */
+
+  .profile-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin-left: 40px;
+    margin-top: 50px;
+  }
+
+  .helo-profile{
+    display: flex;
+    align-items: center;
+    font-size: 1.7em;
+    font-weight: bold;
+    gap: 20px;
+    border-bottom:1px solid #ccc;
+    padding: 15px;
+  }
+
+.profile-table {
+  width: 80%;
+  /* border-collapse: collapse; */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.profile-details {
+  padding: 20px;
+}
+
+.profile-details p{
+  font-size: 0.9em;
+  color: #646464;
+}
+
+.profile-details h2{
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #646464;
+}
+
+.details-container{
+  padding-bottom: 15px;
+
+}
+
+.logout-button {
+  background-color: #149253;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* font-size: 14px; */
+  margin-top: 20px;
+  transition: background-color 0.1s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+  background-color: #00773b;
+  transform: scale(1.02); 
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --------Orders */
+
+.orders-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-image {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-image img {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+.order-details {
+  flex: 2;
+  padding: 10px;
+}
+
+.order-label{
+  font-size: 13px;
+}
+
+.order-value{
+  font-weight: bold;
+  color: #646464;
+}
+
+.order-product-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.order-details p {
+  margin: 5px 0;
+}
+
+
+/* ------Queries */
+
+
+.query-textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.query-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.submit-button,
+.cancel-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  margin-right: 10px;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+
+
+
+
+.queries-list {
+  margin-top: 40px;
+}
+
+.query-card {
+  background-color: #EFF8F2;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.query-desc {
+  font-weight: bold;
+}
+
+.see-answer-button {
+  background-color: #007bff;
+  color: white;
+  font-size: small;
+  border: none;
+  border-radius: 4px;
+  width: 100px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.query-answer {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.query-dropdown {
+  margin-bottom: 20px;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.query-dropdown-select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.query-dropdown-select:focus {
+  border-color: #007bff;
+}

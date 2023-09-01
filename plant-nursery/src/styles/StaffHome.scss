@@ -1,0 +1,93 @@
+.staffPlant-container {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    
+    
+    @keyframes fadeInFromRight {
+      0% {
+        opacity: 0;
+        transform: translateX(50px); 
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0); 
+      }
+    }
+    
+  
+    .staffPlant-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: -20px;
+      
+  
+      .card {
+        width: 24.33%;
+        margin:50px ;
+        margin: 24px;
+        height: 450px;
+        cursor: pointer;
+        
+        
+       
+        .img-fluid {
+          width: 100%; 
+          height: 300px;
+          object-fit: cover;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          
+        }
+
+        .card-plant-body{
+          margin-left: 10px;
+          margin-top: 10px;
+        }
+
+        .plant-title{
+          font-size: 1.5em;
+          font-weight: bold;
+          margin-top: 5px;
+        }
+
+        .plant-price{
+          font-size: 1.4em;
+          margin-top: 10px;
+          // font-weight: 10px;
+          color: #149253;
+        }
+
+        .plant-rating{
+          background-color: #149253;
+          color: white;
+          width: 55px;
+          font-weight: bolder;
+          text-align: center;
+          border-radius: 5px;
+          margin-top: 10px;
+          font-size: 15px;
+        }
+
+        .update-icon-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          }
+          
+          .update-icon-button:hover {
+            transform: scale(1.25); 
+            // box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); 
+          }
+
+     
+      
+      }
+    }
+  }
+  

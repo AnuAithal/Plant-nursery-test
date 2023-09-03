@@ -62,7 +62,7 @@ const UserCart = ({ cartItemCount, setCartItemCount, onClose }) => {
     const fetchCartItems = async () => {
       try {
         const response = await fetch(
-          `http://13.50.136.16:8080/customer/getFromCart/${userId}`
+          `http://13.50.185.10:8080/customer/getFromCart/${userId}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -83,7 +83,7 @@ const UserCart = ({ cartItemCount, setCartItemCount, onClose }) => {
   const handleRemoveFromCart = async (productId) => {
     try {
       const response = await fetch(
-        `http://13.50.136.16:8080/customer/removeFromCart/${userId}/${productId}`,
+        `http://13.50.185.10:8080/customer/removeFromCart/${userId}/${productId}`,
         {
           method: "DELETE",
         }
@@ -119,18 +119,21 @@ const UserCart = ({ cartItemCount, setCartItemCount, onClose }) => {
         address: address,
       }));
 
-      const response = await fetch("http://13.50.136.16:8080/customer/addOrders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderData),
-      });
+      const response = await fetch(
+        "http://13.50.185.10:8080/customer/addOrders",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(orderData),
+        }
+      );
 
       if (response.ok) {
         // Clear cart or perform other actions upon successful order placement
         const cartDeleteResponse = await fetch(
-          `http://13.50.136.16:8080/customer/deleteCart/${userId}`,
+          `http://13.50.185.10:8080/customer/deleteCart/${userId}`,
           {
             method: "DELETE",
           }

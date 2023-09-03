@@ -22,7 +22,7 @@ const UserPlantDetails = ({
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    fetch(`http://13.50.136.16:8080/getProductById/${id}`)
+    fetch(`http://13.50.185.10:8080/getProductById/${id}`)
       .then((response) => response.json())
       .then((data) => setPlant(data))
       .catch((error) => console.error("Error fetching plant data:", error));
@@ -50,13 +50,16 @@ const UserPlantDetails = ({
     };
 
     try {
-      const response = await fetch("http://13.50.136.16:8080/customer/addToCart", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(cartData),
-      });
+      const response = await fetch(
+        "http://13.50.185.10:8080/customer/addToCart",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(cartData),
+        }
+      );
 
       if (response.ok) {
         setCartItemCount((prevCount) => prevCount + quantity);
@@ -71,7 +74,7 @@ const UserPlantDetails = ({
 
   return (
     <div>
-      <ScrollToTop/>
+      <ScrollToTop />
       <ToastContainer theme="light" autoClose={2900} hideProgressBar />
       {/* <div className="user-plant-details-container">     */}
       <div className="plant-details-content">

@@ -12,7 +12,7 @@ const PlantDetails = () => {
   console.log("the iddddd", id);
 
   useEffect(() => {
-    fetch(`http://13.50.136.16:8080/getProductById/${id}`)
+    fetch(`http://13.50.185.10:8080/getProductById/${id}`)
       .then((response) => response.json())
       .then((data) => setPlant(data))
       .catch((error) => console.error("Error fetching plant data:", error));
@@ -33,8 +33,8 @@ const PlantDetails = () => {
   };
 
   return (
-    <div style={{paddingTop:'55px'}}>
-    <ScrollToTop/>
+    <div style={{ paddingTop: "55px" }}>
+      <ScrollToTop />
       <ToastContainer theme="light" autoClose={2900} hideProgressBar />
       <div className="plant-details-content">
         <div className="image-container">

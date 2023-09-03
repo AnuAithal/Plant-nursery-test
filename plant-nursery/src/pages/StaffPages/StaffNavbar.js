@@ -40,7 +40,7 @@ const StaffNavbar = ({ setRole }) => {
 
     try {
       const response = await fetch(
-        "http://13.50.136.16:8080/staff/resetPassword",
+        "http://13.50.185.10:8080/staff/resetPassword",
         {
           method: "PATCH",
           headers: {
@@ -76,23 +76,35 @@ const StaffNavbar = ({ setRole }) => {
             />
             <div className="navBar-nav">
               <a
-                className={`nav-link ${location.pathname === "/staffHome" ? "active" : ""}`}
+                className={`nav-link ${
+                  location.pathname === "/staffHome" ? "active" : ""
+                }`}
                 aria-current="page"
                 href="/staffHome"
               >
                 Plants
               </a>
-              <a className={`nav-link ${location.pathname === "/staffOrders" ? "active" : ""}`} href="/staffOrders">
+              <a
+                className={`nav-link ${
+                  location.pathname === "/staffOrders" ? "active" : ""
+                }`}
+                href="/staffOrders"
+              >
                 Orders
               </a>
-              <a className={`nav-link ${location.pathname === "/staffQueries" ? "active" : ""}`} href="/staffQueries">
+              <a
+                className={`nav-link ${
+                  location.pathname === "/staffQueries" ? "active" : ""
+                }`}
+                href="/staffQueries"
+              >
                 Queries
               </a>
             </div>
           </div>
           <div className="d-flex align-items-center ">
             <img
-            className="profile-image"
+              className="profile-image"
               src="https://cdn-icons-png.flaticon.com/128/5582/5582872.png"
               style={{ width: "30px", cursor: "pointer" }}
               alt="Profile Icon"

@@ -31,7 +31,7 @@ const Login = ({ setRole }) => {
     try {
       setIsLoading(true);
 
-      const response = await fetch("http://13.50.136.16:8080/login", {
+      const response = await fetch("http://13.50.185.10:8080/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,12 +86,22 @@ const Login = ({ setRole }) => {
                   }}
                 >
                   Welcome to{" "}
-                  <span style={{ color: "#0E6840",textShadow: "4px 4px 6px rgba(255, 255, 255, 0.5)" }}>Plant Nursery</span>
+                  <span
+                    style={{
+                      color: "#0E6840",
+                      textShadow: "4px 4px 6px rgba(255, 255, 255, 0.5)",
+                    }}
+                  >
+                    Plant Nursery
+                  </span>
                   <br />
                 </h1>
                 <p
                   className="mb-4 opacity-70"
-                  style={{ color: 'white', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
+                  style={{
+                    color: "white",
+                    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
+                  }}
                 >
                   Explore our wide range of plants and gardening supplies. Log
                   in to get started with your plant-growing journey!
@@ -106,7 +116,7 @@ const Login = ({ setRole }) => {
                       fontWeight: "bold",
                       fontSize: "30px",
                       color: "#0E6840",
-                      textShadow: "4px 4px 6px rgba(0, 0, 0, 0.3)" 
+                      textShadow: "4px 4px 6px rgba(0, 0, 0, 0.3)",
                     }}
                   >
                     Log in

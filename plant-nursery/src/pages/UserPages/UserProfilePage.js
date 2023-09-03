@@ -9,7 +9,7 @@ const UserProfilePage = ({
   cartVisible,
   cartItemCount,
   onClose,
-  setRole
+  setRole,
 }) => {
   const [selectedTab, setSelectedTab] = useState("profile");
   const [orders, setOrders] = useState([]);
@@ -75,7 +75,7 @@ const UserProfilePage = ({
     async function fetchOrders() {
       try {
         const response = await fetch(
-          `http://13.50.136.16:8080/customer/getOrders/${userData.id}`
+          `http://13.50.185.10:8080/customer/getOrders/${userData.id}`
         );
         if (response.ok) {
           const ordersData = await response.json();
@@ -171,7 +171,7 @@ const UserProfilePage = ({
     async function fetchUserResQueries() {
       try {
         const response = await fetch(
-          `http://13.50.136.16:8080/customer/getUserQueries/true/${userData.id}`
+          `http://13.50.185.10:8080/customer/getUserQueries/true/${userData.id}`
         );
         if (response.ok) {
           const queriesData = await response.json();
@@ -190,7 +190,7 @@ const UserProfilePage = ({
     async function fetchUserUnresQueries() {
       try {
         const response = await fetch(
-          `http://13.50.136.16:8080/customer/getUserQueries/false/${userData.id}`
+          `http://13.50.185.10:8080/customer/getUserQueries/false/${userData.id}`
         );
         if (response.ok) {
           const queriesData = await response.json();
@@ -213,16 +213,19 @@ const UserProfilePage = ({
     }
 
     try {
-      const response = await fetch("http://13.50.136.16:8080/customer/postQuery", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id: userData.id,
-          queryDesc: newQuery,
-        }),
-      });
+      const response = await fetch(
+        "http://13.50.185.10:8080/customer/postQuery",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: userData.id,
+            queryDesc: newQuery,
+          }),
+        }
+      );
 
       if (response.ok) {
         // Successfully posted query
@@ -327,7 +330,7 @@ const UserProfilePage = ({
 
   return (
     <div>
-      <ScrollToTop/>
+      <ScrollToTop />
       <div className="page-container">
         <div className="side-navbar">
           <table>

@@ -16,7 +16,7 @@ const StaffOrders = () => {
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
       const response = await fetch(
-        `http://13.50.136.16:8080/staff/updateOrderStatus`,
+        `http://13.50.185.10:8080/staff/updateOrderStatus`,
         {
           method: "PATCH",
           headers: {
@@ -49,7 +49,7 @@ const StaffOrders = () => {
     async function fetchOrders() {
       try {
         const response = await fetch(
-          `http://13.50.136.16:8080/staff/getAllOrders`
+          `http://13.50.185.10:8080/staff/getAllOrders`
         );
         if (response.ok) {
           const ordersData = await response.json();
@@ -95,8 +95,16 @@ const StaffOrders = () => {
                   {order.product.productName}
                 </p>
 
-                <p className="order-label" style={{fontWeight:'bold'}}>Customer Details: </p>
-                <div style={{ display: "flex", gap: "60px", borderBottom:'1px solid #ccc' }}>
+                <p className="order-label" style={{ fontWeight: "bold" }}>
+                  Customer Details:{" "}
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "60px",
+                    borderBottom: "1px solid #ccc",
+                  }}
+                >
                   <div
                     style={{
                       display: "flex",
@@ -118,7 +126,6 @@ const StaffOrders = () => {
                     <span className="order-value">{order.user.id}</span>
                   </div>
                 </div>
-                
 
                 <div style={{ display: "flex", gap: "60px" }}>
                   <div
@@ -163,7 +170,9 @@ const StaffOrders = () => {
                     justifyContent: "space-between",
                   }}
                 >
-                  <p className="order-label" style={{fontWeight:'bold'}}>Order Status: </p>
+                  <p className="order-label" style={{ fontWeight: "bold" }}>
+                    Order Status:{" "}
+                  </p>
                   <button
                     className="edit-button"
                     onClick={() => {

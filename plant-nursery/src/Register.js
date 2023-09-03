@@ -30,7 +30,7 @@ const Register = ({ setRole }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://13.50.136.16:8080/registerUser", {
+      const response = await fetch("http://13.50.185.10:8080/registerUser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,11 +77,23 @@ const Register = ({ setRole }) => {
                 className="my-5 display-5 fw-bold ls-tight"
                 style={{ color: "hsl(218, 81%, 95%)" }}
               >
-                Welcome to  <span style={{ color: "#0E6840",textShadow: "4px 4px 6px rgba(255, 255, 255, 0.5)" }}>Plant Nursery</span> <br />
+                Welcome to{" "}
+                <span
+                  style={{
+                    color: "#0E6840",
+                    textShadow: "4px 4px 6px rgba(255, 255, 255, 0.5)",
+                  }}
+                >
+                  Plant Nursery
+                </span>{" "}
+                <br />
               </h1>
               <p
                 className="mb-4 opacity-70"
-                style={{ color: 'white', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
+                style={{
+                  color: "white",
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
+                }}
               >
                 Explore our wide range of plants and gardening supplies. Log in
                 to get started with your plant-growing journey!
@@ -90,13 +102,15 @@ const Register = ({ setRole }) => {
 
             <div className="login-card bg-glass">
               <div className="card-body px-4 py-5 px-md-5">
-                <h3 style={{
-                      marginBottom: "2em",
-                      fontWeight: "bold",
-                      fontSize: "30px",
-                      color: "#0E6840",
-                      textShadow: "4px 4px 6px rgba(0, 0, 0, 0.3)" 
-                    }}>
+                <h3
+                  style={{
+                    marginBottom: "2em",
+                    fontWeight: "bold",
+                    fontSize: "30px",
+                    color: "#0E6840",
+                    textShadow: "4px 4px 6px rgba(0, 0, 0, 0.3)",
+                  }}
+                >
                   Register
                 </h3>
                 <form onSubmit={handleSubmit}>

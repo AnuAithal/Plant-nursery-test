@@ -21,7 +21,7 @@ const StaffHome = () => {
   });
 
   useEffect(() => {
-    fetch("http://13.50.136.16:8080/getAllProducts")
+    fetch("http://13.50.185.10:8080/getAllProducts")
       .then((response) => response.json())
       .then((data) => setPlantData(data))
       .catch((error) => console.error("Error fetching plant data:", error));
@@ -55,7 +55,7 @@ const StaffHome = () => {
 
       try {
         const response = await fetch(
-          `http://13.50.136.16:8080/staff/updateProduct`,
+          `http://13.50.185.10:8080/staff/updateProduct`,
           {
             method: "PATCH",
             headers: {
@@ -108,18 +108,19 @@ const StaffHome = () => {
   const handleAddPlant = async (event) => {
     event.preventDefault();
 
-    
-
     try {
       setIsLoading(true);
 
-      const response = await fetch("http://13.50.136.16:8080/staff/addProduct", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newPlant),
-      });
+      const response = await fetch(
+        "http://13.50.185.10:8080/staff/addProduct",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newPlant),
+        }
+      );
 
       setIsLoading(false);
 
@@ -138,7 +139,7 @@ const StaffHome = () => {
 
   return (
     <div>
-      <ScrollToTop/>
+      <ScrollToTop />
       <div className="staffPlant-container">
         <div
           style={{
@@ -346,7 +347,7 @@ const StaffHome = () => {
                     border: "1px solid #ccc",
                     borderRadius: "4px",
                     padding: "8px",
-                    width:'60px'
+                    width: "60px",
                   }}
                 >
                   {newPlant.rating}
